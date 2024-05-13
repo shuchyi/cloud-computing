@@ -1,5 +1,5 @@
 <?php
-define('DB_HOST', "localhost");
+define('DB_HOST', "database6.chqgy0y08gjm.us-east-1.rds.amazonaws.com");
 define('DB_USER', "root");
 define('DB_PASS', "");
 define('DB_NAME', "assignment1");
