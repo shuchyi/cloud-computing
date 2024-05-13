@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     // Retrieve event details from the database
-    $mysqli = new mysqli('localhost', 'root', '', 'assignment1');
+    $mysqli = new mysqli('database6.chqgy0y08gjm.us-east-1.rds.amazonaws.com', 'aws-user', 'aws_user', 'assignment1');
     $query = "SELECT * FROM events WHERE id = ?";
     $stmt = $mysqli->prepare($query);
     $stmt->bind_param('i', $id);
