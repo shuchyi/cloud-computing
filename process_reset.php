@@ -16,9 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST['email']) || empty($_POST['password1']) || empty($_POST['password2']) || empty($_POST['studentid'])) {
         $error = "Please fill in the field";
     } else {
-        define('DB_HOST', "localhost");
-        define('DB_USER', "root");
-        define('DB_PASS', "");
+        define('DB_HOST', "database6.chqgy0y08gjm.us-east-1.rds.amazonaws.com");
+        define('DB_USER', "aws_user");
+        define('DB_PASS', "aws_user");
         define('DB_NAME', "assignment1");
 
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
