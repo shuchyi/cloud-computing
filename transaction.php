@@ -97,7 +97,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                                             $record->Email,
                                             $record->ContactNo,
                                            
-                                           
+                        
                                             $record->Total,
                                             $record->Buyer,
                                             $record->Buyer);
