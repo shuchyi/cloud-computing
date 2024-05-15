@@ -19,7 +19,7 @@ if(isset($_GET["id"]) && isset($_GET["price"])){
             $subtotal = $price;
         }
 
-        $sql2 = "UPDATE cart SET price = '$price', quantity = $newQty, subtotal='$subtotal' WHERE id=".$row1["id"];
+        $sql2 = "UPDATE cart SET price = '$price', quantity = $newQty, subtotal='$subtotal' WHERE product_id=".$row1["id"];
 
     }else{
 
@@ -48,7 +48,7 @@ if(isset($_POST["Update_Item"])){
         $subtotal = $price;
     }
 
-    $sql1 = "UPDATE cart SET price = '$price', quantity = '$qty', subtotal='$subtotal' WHERE id=".$_POST["cartId"];
+    $sql1 = "UPDATE cart SET price = '$price', quantity = '$qty', subtotal='$subtotal' WHERE product_id=".$_POST["cartId"];
     $result1 = mysqli_query($con, $sql1);
 
     header("Location: mycart.php");
