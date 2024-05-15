@@ -17,7 +17,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
     </head>
     <body>
         <?php
-        include 'config/db.php';
+        require_once 'config/db.php';
         include 'header.php';
 
         $header = array(
@@ -97,7 +97,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                                             $record->Email,
                                             $record->ContactNo,
                                            
-                        
+                                           
                                             $record->Total,
                                             $record->Buyer,
                                             $record->Buyer);
