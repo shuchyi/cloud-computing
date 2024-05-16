@@ -62,6 +62,10 @@ if (isset($_GET['id'])) {
                 echo '<div class="alert alert-danger">Failed to update event details.</div>';
             }
         }
+
+        // Format start and end dates for datetime-local input
+        $start_date = date('Y-m-d\TH:i', strtotime($event['start_date']));
+        $end_date = date('Y-m-d\TH:i', strtotime($event['end_date']));
     } else {
         // Display an error message if event is not found
         echo '<div class="alert alert-danger">Event not found.</div>';
@@ -104,11 +108,11 @@ include 'indexheader.php';
                     </div>
                     <div class="form-group">
                         <label for="start">Start Date and Time</label>
-                        <input type="datetime-local" class="form-control" id="start" name="start" value="<?php echo date('Y-m-d\TH:i:s', strtotime($event['start_date'])); ?>" required>
+                        <input type="datetime-local" class="form-control" id="start" name="start" value="<?php echo htmlspecialchars($start_date); ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="end">End Date and Time</label>
-                        <input type="datetime-local" class="form-control" id="end" name="end" value="<?php echo date('Y-m-d\TH:i:s', strtotime($event['end_date'])); ?>" required>
+                        <input type="datetime-local" class="form-control" id="end" name="end" value="<?php echo htmlspecialchars($end_date); ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
