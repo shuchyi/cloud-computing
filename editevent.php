@@ -64,8 +64,8 @@ if (isset($_GET['id'])) {
         }
 
         // Format start and end dates for datetime-local input
-        $start_date = date('Y-m-d\TH:i', strtotime($event['start_date']));
-        $end_date = date('Y-m-d\TH:i', strtotime($event['end_date']));
+        $start_date = date('Y-m-d\TH:i', strtotime($event['start']));
+        $end_date = date('Y-m-d\TH:i', strtotime($event['end']));
     } else {
         // Display an error message if event is not found
         echo '<div class="alert alert-danger">Event not found.</div>';
