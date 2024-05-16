@@ -43,7 +43,7 @@ if (isset($_GET['id'])) {
             $status = $_POST['status'];
 
             // Update event details in the database
-            $query = "UPDATE events SET title = ?, description = ?, start_date = ?, end_date = ?, price = ?, status = ? WHERE id = ?";
+            $query = "UPDATE events SET title = ?, description = ?, start = ?, end = ?, price = ?, status = ? WHERE id = ?";
             $stmt = $mysqli->prepare($query);
 
             if ($stmt === false) {
@@ -64,8 +64,8 @@ if (isset($_GET['id'])) {
         }
 
         // Format start and end dates for datetime-local input
-        $start_date = date('Y-m-d\TH:i', strtotime($event['start']));
-        $end_date = date('Y-m-d\TH:i', strtotime($event['end']));
+        $start= date('Y-m-d\TH:i', strtotime($event['start']));
+        $end = date('Y-m-d\TH:i', strtotime($event['end']));
     } else {
         // Display an error message if event is not found
         echo '<div class="alert alert-danger">Event not found.</div>';
@@ -108,11 +108,11 @@ include 'indexheader.php';
                     </div>
                     <div class="form-group">
                         <label for="start">Start Date and Time</label>
-                        <input type="datetime-local" class="form-control" id="start" name="start" value="<?php echo htmlspecialchars($start_date); ?>" required>
+                        <input type="datetime-local" class="form-control" id="start" name="start" value="<?php echo htmlspecialchars($start); ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="end">End Date and Time</label>
-                        <input type="datetime-local" class="form-control" id="end" name="end" value="<?php echo htmlspecialchars($end_date); ?>" required>
+                        <input type="datetime-local" class="form-control" id="end" name="end" value="<?php echo htmlspecialchars($end); ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
